@@ -1,3 +1,4 @@
+import BooksPage from './pages/BooksPage'
 import { useState } from 'react'
 import ServiceCard from './components/ServiceCard'
 import './App.css'
@@ -62,14 +63,16 @@ function App() {
           </section>
         </>
 
-      ) : (
-        <section>
-          <h2>{activePage}</h2>
-          <p>
-            The {activePage} feature is currently under development.
-          </p>
-        </section>
-      )}
+      ) : activePage === 'Books' ? (
+  <BooksPage />
+) : (
+  <section>
+    <h2>{activePage}</h2>
+    <p>
+      The {activePage} feature is currently under development.
+    </p>
+  </section>
+)}
 
 
       <footer>
